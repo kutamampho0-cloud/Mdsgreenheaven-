@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MDS Green Heaven — Water-wise hydroponic farming, Makhado</title>
+<meta name="description" content="MDS Green Heaven is a women-led hydroponic vegetable farm in Makhado, Limpopo, growing premium produce on up to 90% less water.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#182319;
+    --forest:#1F3D2B;
+    --forest-deep:#152A1D;
+    --sage:#9AB292;
+    --sage-pale:#DCE6D6;
+    --sun:#C9932F;
+    --soil:#8B5A3C;
+    --paper:#F6F2E7;
+    --paper-dim:#EFEAdc;
+    --line:rgba(23,35,25,0.14);
+    --line-on-dark:rgba(246,242,231,0.22);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans',sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--soil);
+  }
+  .eyebrow.on-dark{color:var(--sun);}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px 32px;
+    background:rgba(246,242,231,0.86);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+    transition:padding 0.25s ease;
+  }
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .brand svg{width:30px;height:30px;flex:none;}
+  .brand span{font-family:'Fraunces',serif;font-weight:600;font-size:18px;color:var(--forest);}
+  .navlinks{display:flex;gap:32px;font-size:14.5px;}
+  .navlinks a{text-decoration:none;color:var(--ink);position:relative;padding-bottom:4px;}
+  .navlinks a::after{
+    content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--soil);
+    transition:width 0.25s ease;
+  }
+  .navlinks a:hover::after{width:100%;}
+  .nav-cta{
+    font-size:13.5px;font-weight:500;border:1px solid var(--forest);
+    padding:9px 18px;border-radius:100px;text-decoration:none;color:var(--forest);
+    transition:background 0.2s ease,color 0.2s ease;
+  }
+  .nav-cta:hover{background:var(--forest);color:var(--paper);}
+  .navburger{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .navburger span{display:block;width:22px;height:1.5px;background:var(--ink);margin:5px 0;}
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    background:var(--forest);
+    color:var(--paper);
+    padding:150px 0 0;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-inner{
+    max-width:1140px;margin:0 auto;padding:0 32px 90px;
+    display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:end;
+  }
+  .hero-copy h1{
+    font-size:clamp(40px,5.4vw,66px);
+    line-height:1.04;
+    color:var(--paper);
+    margin:18px 0 26px;
+  }
+  .hero-copy h1 em{font-style:italic;font-weight:500;color:var(--sun);}
+  .hero-copy p{font-size:18px;max-width:480px;color:var(--sage-pale);margin:0 0 34px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:14.5px;font-weight:500;text-decoration:none;
+    padding:13px 24px;border-radius:100px;
+    transition:transform 0.2s ease,background 0.2s ease,color 0.2s ease;
+  }
+  .btn-primary{background:var(--sun);color:var(--forest-deep);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{border:1px solid var(--line-on-dark);color:var(--paper);}
+  .btn-ghost:hover{background:rgba(246,242,231,0.1);}
+
+  .hero-illustration{position:relative;}
+  .hero-illustration svg{width:100%;height:auto;display:block;}
+
+  .hero-stats{
+    border-top:1px solid var(--line-on-dark);
+    padding:26px 0;
+  }
+  .hero-stats .wrap{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+  }
+  .hstat b{
+    display:block;font-family:'Fraunces',serif;font-size:30px;font-weight:600;color:var(--sun);
+  }
+  .hstat span{font-size:13px;color:var(--sage-pale);}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:100px 0;}
+  section.dim{background:var(--paper-dim);}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head h2{font-size:clamp(28px,3.4vw,40px);margin-top:14px;}
+  .section-head p{color:#4b564c;font-size:17px;margin-top:16px;}
+
+  /* ---------- STORY ---------- */
+  .story{display:grid;grid-template-columns:0.9fr 1.1fr;gap:64px;align-items:start;}
+  .story blockquote{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+    font-size:26px;line-height:1.4;color:var(--forest);
+    margin:0 0 20px;
+    border-left:2px solid var(--soil);
+    padding-left:24px;
+  }
+  .story cite{
+    display:block;font-family:'Work Sans';font-style:normal;font-size:14px;
+    color:var(--soil);margin-top:14px;font-weight:500;
+  }
+  .founders{display:flex;gap:0;margin-top:28px;}
+  .founder{
+    flex:1;padding:18px 16px;border-top:1px solid var(--line);
+  }
+  .founder:not(:first-child){border-left:1px solid var(--line);}
+  .founder b{display:block;font-family:'Fraunces',serif;font-size:16px;font-weight:600;}
+  .founder span{font-size:12.5px;color:#6b756a;}
+
+  /* ---------- WHY HYDROPONICS (comparison) ---------- */
+  .compare{margin-top:10px;}
+  .compare-row{
+    display:grid;grid-template-columns:170px 1fr;gap:18px;align-items:center;
+    padding:18px 0;border-top:1px solid var(--line);
+  }
+  .compare-row:last-child{border-bottom:1px solid var(--line);}
+  .compare-label{font-size:14.5px;font-weight:500;}
+  .compare-bars{display:flex;flex-direction:column;gap:8px;}
+  .bar-track{display:flex;align-items:center;gap:12px;}
+  .bar-tag{width:90px;font-size:12px;font-family:'IBM Plex Mono',monospace;color:#6b756a;flex:none;}
+  .bar-bg{flex:1;height:10px;background:var(--line);border-radius:6px;overflow:hidden;}
+  .bar-fill{height:100%;border-radius:6px;}
+  .bar-fill.old{background:var(--soil);}
+  .bar-fill.new{background:var(--forest);}
+  .bar-val{width:54px;font-size:12.5px;font-family:'IBM Plex Mono',monospace;text-align:right;flex:none;}
+
+  /* ---------- GROW GRID ---------- */
+  .grow-grid{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:0;
+    border-top:1px solid var(--line);border-left:1px solid var(--line);
+  }
+  .grow-item{
+    border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:28px 20px;text-align:center;
+  }
+  .grow-item svg{width:42px;height:42px;margin-bottom:14px;color:var(--forest);}
+  .grow-item h3{font-size:15.5px;font-weight:600;}
+  .grow-item p{font-size:12.5px;color:#6b756a;margin:6px 0 0;}
+
+  /* ---------- LOCATION ---------- */
+  .location{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+  .loc-card{
+    background:var(--forest);color:var(--paper);border-radius:18px;
+    padding:40px;position:relative;overflow:hidden;
+  }
+  .loc-card svg{position:absolute;right:-30px;bottom:-30px;width:220px;opacity:0.16;}
+  .loc-line{
+    display:flex;justify-content:space-between;padding:12px 0;
+    border-top:1px solid var(--line-on-dark);font-size:14px;
+  }
+  .loc-line:first-of-type{border-top:none;}
+  .loc-line span:first-child{color:var(--sage-pale);}
+  .loc-line span:last-child{font-family:'IBM Plex Mono',monospace;font-size:13px;text-align:right;}
+
+  /* ---------- IMPACT ---------- */
+  .impact-list{border-top:1px solid var(--line);}
+  .impact-row{
+    display:grid;grid-template-columns:120px 1fr 2fr;gap:28px;
+    padding:28px 0;border-bottom:1px solid var(--line);align-items:baseline;
+  }
+  .impact-row b{font-family:'Fraunces',serif;font-size:38px;font-weight:600;color:var(--forest);}
+  .impact-row h3{font-size:16px;font-weight:600;font-family:'Work Sans';}
+  .impact-row p{font-size:14.5px;color:#4b564c;margin:6px 0 0;}
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  footer{background:var(--forest-deep);color:var(--paper);padding:90px 0 40px;}
+  .contact-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;}
+  .contact-grid h2{color:var(--paper);font-size:clamp(28px,3.4vw,40px);}
+  .contact-grid p{color:var(--sage-pale);margin-top:16px;max-width:440px;}
+  .contact-fields{display:flex;flex-direction:column;gap:16px;}
+  .field{
+    border:none;border-bottom:1px solid var(--line-on-dark);background:transparent;
+    color:var(--paper);font-family:'Work Sans';font-size:15px;padding:10px 2px;
+    outline:none;
+  }
+  .field::placeholder{color:rgba(246,242,231,0.45);}
+  .field:focus{border-color:var(--sun);}
+  textarea.field{resize:vertical;min-height:70px;}
+  .contact-fields .btn-primary{align-self:flex-start;margin-top:6px;border:none;cursor:pointer;font-family:inherit;}
+  .foot-meta{
+    margin-top:80px;padding-top:28px;border-top:1px solid var(--line-on-dark);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-size:13px;color:rgba(246,242,231,0.55);
+  }
+  .form-note{font-size:13px;color:rgba(246,242,231,0.5);margin-top:4px;}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity 0.7s ease,transform 0.7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  @media (max-width:860px){
+    .navlinks,.nav-cta{display:none;}
+    .navburger{display:block;}
+    .hero-inner{grid-template-columns:1fr;}
+    .hero-illustration{order:-1;max-width:280px;}
+    .hero-stats .wrap{grid-template-columns:repeat(2,1fr);row-gap:20px;}
+    .story,.location,.contact-grid{grid-template-columns:1fr;}
+    .grow-grid{grid-template-columns:repeat(2,1fr);}
+    .impact-row{grid-template-columns:80px 1fr;}
+    .impact-row p{grid-column:2 / 3;}
+    section{padding:70px 0;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .reveal{transition:none;opacity:1;transform:none;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<nav id="siteNav">
+  <a class="brand" href="#top">
+    <svg viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="48" fill="#EAF1EC" stroke="#1F3D2B" stroke-width="2.5"/><circle cx="50" cy="50" r="41" fill="none" stroke="#C9932F" stroke-width="1"/><path d="M50 78 C50 78 34 65 34 43 C34 24 50 12 50 12 C50 12 66 24 66 43 C66 65 50 78 50 78 Z" fill="#1F3D2B"/><path d="M50 78 L50 20" stroke="#EAF1EC" stroke-width="1.6"/></svg>
+    <span>MDS Green Heaven</span>
+  </a>
+  <div class="navlinks">
+    <a href="#story">Story</a>
+    <a href="#why">Why hydroponics</a>
+    <a href="#grow">What we grow</a>
+    <a href="#impact">Impact</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="nav-cta" href="#contact">Partner with us</a>
+  <button class="navburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow on-dark">Makhado · Vhembe District · Limpopo</div>
+      <h1>Grown on <em>90% less water</em>, in a district that can't spare any more.</h1>
+      <p>MDS Green Heaven is a women-led hydroponic vegetable farm bringing premium, water-wise produce to Vhembe District — and a new kind of technical, local, skilled job to the women and youth of Makhado.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">Partner with us</a>
+        <a class="btn btn-ghost" href="#story">Our story ↓</a>
+      </div>
+    </div>
+    <div class="hero-illustration">
+      <svg viewBox="0 0 320 380" fill="none">
+        <rect x="20" y="40" width="280" height="26" rx="4" fill="#152A1D" stroke="#9AB292" stroke-width="1"/>
+        <rect x="20" y="120" width="280" height="26" rx="4" fill="#152A1D" stroke="#9AB292" stroke-width="1"/>
+        <rect x="20" y="200" width="280" height="26" rx="4" fill="#152A1D" stroke="#9AB292" stroke-width="1"/>
+        <path id="flowpath1" d="M28 53 H292" stroke="#C9932F" stroke-width="2" stroke-dasharray="6 8"/>
+        <path id="flowpath2" d="M28 133 H292" stroke="#C9932F" stroke-width="2" stroke-dasharray="6 8"/>
+        <path id="flowpath3" d="M28 213 H292" stroke="#C9932F" stroke-width="2" stroke-dasharray="6 8"/>
+        <g>
+          <path d="M60 40 C60 40 52 22 60 8 C68 22 60 40 60 40 Z" fill="#9AB292"/>
+          <path d="M120 40 C120 40 112 18 120 4 C128 18 120 40 120 40 Z" fill="#9AB292"/>
+          <path d="M180 40 C180 40 172 22 180 8 C188 22 180 40 180 40 Z" fill="#9AB292"/>
+          <path d="M240 40 C240 40 232 18 240 4 C248 18 240 40 240 40 Z" fill="#9AB292"/>
+        </g>
+        <g>
+          <path d="M60 120 C60 120 52 102 60 88 C68 102 60 120 60 120 Z" fill="#DCE6D6"/>
+          <path d="M120 120 C120 120 112 98 120 84 C128 98 120 120 120 120 Z" fill="#DCE6D6"/>
+          <path d="M180 120 C180 120 172 102 180 88 C188 102 180 120 180 120 Z" fill="#DCE6D6"/>
+          <path d="M240 120 C240 120 232 98 240 84 C248 98 240 120 240 120 Z" fill="#DCE6D6"/>
+        </g>
+        <g>
+          <path d="M60 200 C60 200 52 182 60 168 C68 182 60 200 60 200 Z" fill="#9AB292"/>
+          <path d="M120 200 C120 200 112 178 120 164 C128 178 120 200 120 200 Z" fill="#9AB292"/>
+          <path d="M180 200 C180 200 172 182 180 168 C188 182 180 200 180 200 Z" fill="#9AB292"/>
+          <path d="M240 200 C240 200 232 178 240 164 C248 178 240 200 240 200 Z" fill="#9AB292"/>
+        </g>
+        <text x="20" y="255" fill="#9AB292" font-family="IBM Plex Mono" font-size="11">NFT CHANNEL — LETTUCE · ROW 01–03</text>
+        <text x="20" y="272" fill="#6b8564" font-family="IBM Plex Mono" font-size="11">EC 1.8 · pH 5.8 · 21°C</text>
+      </svg>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="wrap">
+      <div class="hstat"><b>90%</b><span>less water than open-field farming</span></div>
+      <div class="hstat"><b>20 ha</b><span>site secured in Makhado</span></div>
+      <div class="hstat"><b>30</b><span>jobs planned within 3 years</span></div>
+      <div class="hstat"><b>365</b><span>days of year-round harvest</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="story">
+  <div class="wrap story">
+    <div class="reveal">
+      <div class="eyebrow">Our story</div>
+      <blockquote>"We watched local farmers battle drought year after year, and asked: why can't this be grown here, by us, for us?"<cite>— Mpho Kutama, Managing Director</cite></blockquote>
+      <div class="founders">
+        <div class="founder"><b>Mpho</b><span>Managing Director</span></div>
+        <div class="founder"><b>Dianah</b><span>Operations Director</span></div>
+        <div class="founder"><b>Sharon</b><span>Finance &amp; Sales</span></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <h2>Three sisters, one farm, a district that needed both.</h2>
+      <p>MDS Green Heaven was founded by Mpho, Dianah and Sharon Kutama to solve a problem they saw up close: Vhembe District's vegetables were either trucked in from Gauteng at a premium, or grown locally at the mercy of drought. Hydroponics offered a third way — production that doesn't depend on the rain, using a fraction of the water conventional farming needs.</p>
+      <p style="margin-top:16px;">We're registered, B-BBEE certified, and have secured a 20-hectare site in Makhado. What we're building now is the farm itself: greenhouse infrastructure, a nursery, a pack-house, and a team drawn from our own community.</p>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="dim">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Why hydroponics</div>
+      <h2>The same harvest, on a fraction of the water.</h2>
+      <p>Vhembe District's biggest constraint on agriculture isn't land or sunlight — it's water. Hydroponics lets us grow more, more reliably, with far less of the resource that's scarcest here.</p>
+    </div>
+    <div class="compare reveal">
+      <div class="compare-row">
+        <div class="compare-label">Water use<br><span style="font-size:12px;color:#6b756a;font-weight:400;">per kg produced</span></div>
+        <div class="compare-bars">
+          <div class="bar-track"><span class="bar-tag">Open-field</span><div class="bar-bg"><div class="bar-fill old" style="width:100%"></div></div><span class="bar-val">100%</span></div>
+          <div class="bar-track"><span class="bar-tag">MDS hydroponic</span><div class="bar-bg"><div class="bar-fill new" style="width:10%"></div></div><span class="bar-val">≤10%</span></div>
+        </div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-label">Harvest reliability<br><span style="font-size:12px;color:#6b756a;font-weight:400;">weeks of the year</span></div>
+        <div class="compare-bars">
+          <div class="bar-track"><span class="bar-tag">Rain-fed</span><div class="bar-bg"><div class="bar-fill old" style="width:55%"></div></div><span class="bar-val">Seasonal</span></div>
+          <div class="bar-track"><span class="bar-tag">MDS hydroponic</span><div class="bar-bg"><div class="bar-fill new" style="width:100%"></div></div><span class="bar-val">52 weeks</span></div>
+        </div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-label">Distance to Makhado<br><span style="font-size:12px;color:#6b756a;font-weight:400;">farm to buyer</span></div>
+        <div class="compare-bars">
+          <div class="bar-track"><span class="bar-tag">Gauteng supply</span><div class="bar-bg"><div class="bar-fill old" style="width:100%"></div></div><span class="bar-val">~350 km</span></div>
+          <div class="bar-track"><span class="bar-tag">MDS Green Heaven</span><div class="bar-bg"><div class="bar-fill new" style="width:6%"></div></div><span class="bar-val">Local</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="grow">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">What we grow</div>
+      <h2>Five crops. One consistent harvest, every week.</h2>
+    </div>
+    <div class="grow-grid reveal">
+      <div class="grow-item">
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 36 C10 30 8 18 14 10 C18 5 24 5 28 10 C34 18 30 30 20 36Z"/><path d="M20 36 V16"/></svg>
+        <h3>Lettuce</h3><p>28–35 day cycle</p>
+      </div>
+      <div class="grow-item">
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 4 C24 10 30 12 30 20 C30 28 26 34 20 36 C14 34 10 28 10 20 C10 12 16 10 20 4Z"/><path d="M20 36 V20"/></svg>
+        <h3>Spinach &amp; chard</h3><p>35–42 day cycle</p>
+      </div>
+      <div class="grow-item">
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="20" cy="22" r="12"/><path d="M20 10 C18 6 22 4 24 6"/></svg>
+        <h3>Tomatoes</h3><p>70–90 day cycle</p>
+      </div>
+      <div class="grow-item">
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 34 C14 34 10 28 12 20 C13 15 17 8 20 6 C23 8 27 15 28 20 C30 28 26 34 20 34Z"/></svg>
+        <h3>Sweet peppers</h3><p>80–100 day cycle</p>
+      </div>
+      <div class="grow-item">
+        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 36 V12"/><path d="M20 12 C14 12 12 8 12 4 M20 18 C26 18 28 14 28 10 M20 24 C14 24 12 20 12 16"/></svg>
+        <h3>Herbs</h3><p>21–30 day cycle</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="location" class="dim">
+  <div class="wrap location">
+    <div class="reveal">
+      <div class="eyebrow">Where we grow</div>
+      <h2 style="margin-top:14px;font-size:clamp(26px,3vw,36px);">Makhado — on the N1, in the heart of Vhembe District.</h2>
+      <p style="color:#4b564c;margin-top:16px;">Our site sits along Road R578, close enough to the N1 corridor to reach Polokwane, Musina and the Beitbridge border post, and to serve retailers, restaurants and schools across Vhembe District with same-day, same-week freshness.</p>
+    </div>
+    <div class="loc-card reveal">
+      <svg viewBox="0 0 200 200" fill="none"><circle cx="100" cy="100" r="90" stroke="#9AB292" stroke-width="1"/><circle cx="100" cy="100" r="60" stroke="#9AB292" stroke-width="1"/><path d="M100 40 C100 40 130 70 130 100 C130 122 116 138 100 138 C84 138 70 122 70 100 C70 70 100 40 100 40Z" fill="#9AB292" opacity="0.5"/></svg>
+      <div class="loc-line"><span>Municipality</span><span>Vhembe District</span></div>
+      <div class="loc-line"><span>Nearest route</span><span>Road R578 / N1 corridor</span></div>
+      <div class="loc-line"><span>Site size</span><span>20 hectares</span></div>
+      <div class="loc-line"><span>Water source</span><span>Borehole + fertigation</span></div>
+      <div class="loc-line"><span>Status</span><span>Site secured, Phase 1 in development</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="impact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Impact</div>
+      <h2>A farm that grows people, not just vegetables.</h2>
+    </div>
+    <div class="impact-list reveal">
+      <div class="impact-row">
+        <b>18</b>
+        <h3>Permanent roles</h3>
+        <p>Technical, year-round positions in fertigation, pack-house operations and quality control — skills that didn't exist as an option here before.</p>
+      </div>
+      <div class="impact-row">
+        <b>12</b>
+        <h3>Seasonal roles</h3>
+        <p>Peak-harvest positions supporting planting, grading and packing, drawn from the Makhado community.</p>
+      </div>
+      <div class="impact-row">
+        <b>100%</b>
+        <h3>Women-led</h3>
+        <p>Founded, owned and directed by three sisters, with women and youth given first priority in hiring and training.</p>
+      </div>
+      <div class="impact-row">
+        <b>0</b>
+        <h3>Flood irrigation</h3>
+        <p>Every litre is recirculated through the system, easing pressure on Vhembe District's groundwater and rivers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <div class="eyebrow on-dark">Get in touch</div>
+      <h2 style="margin-top:14px;">Buyers, funders, and future teammates — let's talk.</h2>
+      <p>Whether you're a retailer looking for a local supplier, a funding partner, or someone who wants to work with us, we'd like to hear from you.</p>
+    </div>
+    <form class="contact-fields reveal" onsubmit="event.preventDefault(); this.querySelector('.form-note').textContent='Thanks — we will be in touch shortly.';">
+      <input class="field" type="text" placeholder="Your name" required>
+      <input class="field" type="email" placeholder="Email address" required>
+      <input class="field" type="text" placeholder="I'm reaching out as a… (buyer, funder, applicant)">
+      <textarea class="field" rows="3" placeholder="Your message"></textarea>
+      <button class="btn btn-primary" type="submit">Send message</button>
+      <div class="form-note">We typically reply within 2–3 working days.</div>
+    </form>
+  </div>
+  <div class="wrap foot-meta">
+    <span>MDS Green Heaven (Pty) Ltd · Reg. 2026/571038/07</span>
+    <span>Makhado, Vhembe District, Limpopo Province</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.reveal').forEach(function(el){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){ entry.target.classList.add('in'); io.unobserve(entry.target); }
+      });
+    }, {threshold:0.15});
+    io.observe(el);
+  });
+
+  var flowPaths = document.querySelectorAll('#flowpath1,#flowpath2,#flowpath3');
+  flowPaths.forEach(function(p,i){
+    var offset = 0;
+    function animate(){
+      offset -= 0.6;
+      p.style.strokeDashoffset = offset;
+      requestAnimationFrame(animate);
+    }
+    setTimeout(animate, i*150);
+  });
+
+  var nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', function(){
+    nav.style.padding = window.scrollY > 12 ? '12px 32px' : '20px 32px';
+  });
+</script>
+
+</body>
+</html>
